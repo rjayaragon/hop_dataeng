@@ -1,11 +1,11 @@
 # GitHub Repositories Pipeline - Progress Tracker
 
 ## Current Status
-**Phase:** Silver Layer - Complete | Gold Layer - Pending
-**Last Updated:** 2025-11-19 (Session 4)
-**Time Investment:** 3.5 hours cumulative
+**Phase:** Silver Layer - Complete | Gold Layer - Pending | Git & Documentation - Complete
+**Last Updated:** 2025-11-22 (Session 8)
+**Time Investment:** 9.25 hours cumulative
 **Schedule Status:** Ahead of Schedule
-**Next Focus:** Git workflow setup + Gold layer business aggregations
+**Next Focus:** Gold layer business aggregations (4 aggregations to implement)
 
 ---
 
@@ -852,6 +852,68 @@ pd.to_datetime(df_github_repos['created_at'])  # Works!
 - [ ] Implement first gold layer question: most popular languages
 - [ ] Continue with remaining gold layer aggregations
 
+---
+
+## Session 8 (2025-11-22) - First Git Commit & Enterprise Documentation
+
+### What Was Done
+1. **Created first git commit: Complete**
+   - Staged: notebooks/, data/, requirements.txt, pipeline_design.md, PROGRESS.md
+   - Commit message: Bronze and Silver layers complete with 1270 cleaned repositories
+   - Status: Successfully committed to main branch
+
+2. **Updated git remote: Complete**
+   - Changed remote from nyc_wifihotspot.git to hop_dataeng.git
+   - Verified: `git remote -v` shows correct URL
+   - Reason: Repository was incorrectly pointing to old project
+
+3. **Pushed to GitHub: Complete**
+   - Command: `git push -u origin main`
+   - All files successfully uploaded to https://github.com/rjayaragon/hop_dataeng.git
+   - Repository now public with full commit history
+
+4. **Created comprehensive README.md: Complete**
+   - Project title: "GitHub Repository Analytics Platform built with medallion architecture"
+   - Sections: Status, Architecture, Schema, Setup, Project Structure, Data Quality
+   - Enterprise-grade documentation (no personal framing)
+   - Includes roadmap and future enhancements
+
+5. **Linked README to workflow_playbook.md: Complete**
+   - Added to "Quick Start by Purpose" navigation
+   - Added as entry #6 in "Complete Document Reference"
+   - Updated all subsequent document numbering
+   - README integrated into documentation system
+
+### Design Decisions Made (Session 8)
+- **Decision:** Remove "8-week hiring challenge" language from README
+  - **Reasoning:** Portfolio project should use professional, enterprise-appropriate description
+  - **Impact:** README now focuses on technical achievements vs. personal context
+
+- **Decision:** Link README to workflow_playbook navigation
+  - **Reasoning:** Keep all documentation discoverable and interconnected
+  - **Impact:** New contributors can find README from document map
+
+### Key Learning Points
+1. Git workflow: commit → verify → push is standard practice
+2. Remote URL management: can update without re-cloning
+3. README is external documentation (public-facing) vs internal docs (private learning)
+4. Documentation system must be comprehensive and interconnected
+
+### Code Locations (Session 8)
+| Component | File | Location |
+|-----------|------|----------|
+| First commit | git | Commit 5ea56f6 on main branch |
+| README.md | Project root | C:/Users/rjaya/OneDrive/Desktop/hop_dataeng/README.md |
+| Workflow playbook links | .claude/workflow_playbook.md | Lines 553-555, 693-715 |
+
+### Open Tasks (Remaining)
+- [ ] Create gold_github.ipynb notebook
+- [ ] Implement 4 gold layer aggregations
+- [ ] Commit and push gold layer work
+- [ ] Build pipelines 2 and 3 (future phases)
+
+---
+
 ## Time Investment Tracking
 
 | Session | Focus | Duration | Status |
@@ -863,5 +925,6 @@ pd.to_datetime(df_github_repos['created_at'])  # Works!
 | Session 5 | Silver validations + mentor mode deep dive | 1.5 hours | Complete |
 | Session 6 | Data quality exploration + null value analysis | 1.0 hour | Complete |
 | Session 7 | Null handling + date standardization + tech docs | 1.5 hours | Complete |
-| **Cumulative** | **All work to date** | **8.5 hours** | **Active** |
-| **Remaining (estimate)** | **Save silver + Build gold layer** | **2-3 hours** | **Pending** |
+| Session 8 | First git commit + README + documentation | 0.75 hours | Complete |
+| **Cumulative** | **All work to date** | **9.25 hours** | **Active** |
+| **Remaining (estimate)** | **Build gold layer + additional pipelines** | **2-3 hours** | **Pending** |
