@@ -907,10 +907,118 @@ pd.to_datetime(df_github_repos['created_at'])  # Works!
 | Workflow playbook links | .claude/workflow_playbook.md | Lines 553-555, 693-715 |
 
 ### Open Tasks (Remaining)
-- [ ] Create gold_github.ipynb notebook
-- [ ] Implement 4 gold layer aggregations
-- [ ] Commit and push gold layer work
 - [ ] Build pipelines 2 and 3 (future phases)
+
+---
+
+## Session 9 (2025-11-28) - Gold Layer Completion & Portfolio Strategy
+
+### What Was Done
+
+1. **Completed gold layer aggregations: Complete**
+   - Top languages by popularity (count by language, head 10)
+   - Top users by repository count (count by owner_login, head 10)
+   - Average stars by language (groupby language, mean stargazers_count, head 10)
+   - All 3 aggregations working and producing meaningful insights
+
+2. **Critical design decision: Skipped creation trends aggregation: Complete**
+   - Initially planned "repository creation trends by year/month"
+   - User correctly identified this as non-actionable insight
+   - Reasoning: No temporal pattern (unlike seasonal fashion or vacation trends), just historical timestamps
+   - Result: More focused gold layer with only valuable aggregations
+   - Updated pipeline_design.md to reflect final decision
+
+3. **GitHub portfolio best practices research: Complete**
+   - Deep research on what employers want in portfolios
+   - AI-assisted coding disclosure analysis (57% of hiring managers negative on AI in interviews)
+   - Recommendation: Keep mentoring documentation PRIVATE
+   - Decision: Don't mention Claude/AI in public portfolio
+   - Strategy: Focus on technical decisions and outcomes, not tools used
+   - Added .gitignore planning for private docs (.claude/, PROGRESS.md, etc.)
+
+4. **Documentation cleanup: Complete**
+   - Updated pipeline_design.md
+   - Removed: "What's the trend in repository creation over time?"
+   - Removed: "Repositories by creation date" table reference
+   - Added: "Which programming languages have the highest average star counts?"
+   - Added: "Average stars by language" as final aggregation table
+
+### Key Learning Points
+
+1. **Critical thinking about data analysis**
+   - Not all analyses are valuable, even if they're technically possible
+   - Good data engineers ask: "Does this answer a business question?"
+   - Creation trends would show timing, but timing without seasonal/cyclical pattern = noise
+
+2. **Portfolio strategy for AI-assisted learning**
+   - Industry divided on AI disclosure (progressive vs traditional)
+   - Best approach: No mention, focus on technical capability
+   - Private documentation (mentoring, learning process) shouldn't be public
+   - Public portfolio should show independence and decision-making
+
+3. **Mentoring approach effectiveness**
+   - Presenting options instead of answers builds pattern recognition
+   - User correctly identified weak analysis through critical thinking
+   - Showing both the process and outcomes matters for learning
+
+### Design Decisions Made (Session 9)
+
+- **Decision:** Skip repository creation trends aggregation
+  - **Reasoning:** No actionable insight; temporal patterns require seasonality/cycles
+  - **Impact:** Leaner gold layer with only valuable business questions answered
+
+- **Decision:** Keep all mentoring documentation private
+  - **Reasoning:** Portfolio should show independence; internal scaffolding signals dependency
+  - **Impact:** Stronger candidate positioning for job interviews
+
+- **Decision:** No explicit AI disclosure in portfolio
+  - **Reasoning:** 57% of hiring managers view AI use negatively; being silent avoids controversy
+  - **Impact:** Focus stays on technical accomplishments and decision-making
+
+### Blockers Encountered & Solutions
+
+None at session end. Session was smooth with user demonstrating strong critical thinking about data analysis validity.
+
+### Gold Layer Completion Metrics
+
+| Aggregation | Status | Output | Lines of Code |
+|------------|--------|--------|----------------|
+| Top languages | Complete | JavaScript (335), Unknown (331), Ruby (67), ... | 1 |
+| Top users | Complete | JakeWharton (30), addyosmani (30), gaearon (30), ... | 1 |
+| Average stars by language | Complete | Language → mean stargazers_count | 1 |
+| Creation trends | Skipped | N/A | 0 |
+
+### Code Locations (Session 9)
+
+| Component | File | Cell |
+|-----------|------|------|
+| Top languages aggregation | gold_github.ipynb | Block with value_counts |
+| Top users aggregation | gold_github.ipynb | Block with value_counts, sorted |
+| Average stars aggregation | gold_github.ipynb | Block with groupby().mean() |
+
+### What's Next
+
+- [ ] Commit gold layer work to git
+- [ ] Update README with gold layer results (optional)
+- [ ] Begin pipeline 2 design (new data source)
+- [ ] Build pipelines 2 and 3 for portfolio completeness
+
+### Portfolio Status for Job Interviews
+
+**Ready for Public GitHub:**
+- Bronze layer: Complete with error handling
+- Silver layer: Complete with quality flags and validation
+- Gold layer: Complete with 3 valuable aggregations
+- Documentation: Professional README, clean code, architecture diagrams
+- Git history: Clear commit messages showing progression
+
+**Private (will be in .gitignore):**
+- .claude/ folder (mentoring system)
+- PROGRESS.md (learning journey)
+- DAILY_SCHEDULE.md (time tracking)
+- ENTERPRISE_WORKFLOWS_AND_SOPS.md (team practices)
+- PIPELINE_WORKFLOW_OUTLINE.md (technical blueprint)
+- YOUR_8_WEEK_HIRING_SCHEDULE.md (personal schedule)
 
 ---
 
@@ -926,5 +1034,6 @@ pd.to_datetime(df_github_repos['created_at'])  # Works!
 | Session 6 | Data quality exploration + null value analysis | 1.0 hour | Complete |
 | Session 7 | Null handling + date standardization + tech docs | 1.5 hours | Complete |
 | Session 8 | First git commit + README + documentation | 0.75 hours | Complete |
-| **Cumulative** | **All work to date** | **9.25 hours** | **Active** |
-| **Remaining (estimate)** | **Build gold layer + additional pipelines** | **2-3 hours** | **Pending** |
+| Session 9 | Gold layer completion + portfolio strategy | 1.5 hours | Complete |
+| **Cumulative** | **All work to date** | **10.75 hours** | **Active** |
+| **Remaining (estimate)** | **Build pipelines 2 and 3 + interview prep** | **4-5 hours** | **Pending** |

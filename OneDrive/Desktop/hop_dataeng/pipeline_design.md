@@ -54,7 +54,7 @@
  ### What business questions does this answer?
  - What are the most popular programming languages?
  - Which users have the most repositories?
- - What's the trend in repository creation over time?
+ - Which programming languages have the highest average star counts?
 
  ### What aggregations/features?
  - Count repositories by language
@@ -64,6 +64,6 @@
  ### What tables will you create?
  - Top languages by popularity
  - Top users by repository count
- - Repositories by creation date
+ - Average stars by language
  
 
